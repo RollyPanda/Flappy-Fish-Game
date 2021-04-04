@@ -113,7 +113,7 @@ pipe_height = [400, 600, 800]
 game_over_surface = pygame.transform.scale2x(pygame.image.load('assets/message.png').convert_alpha())
 game_over_rect = game_over_surface.get_rect(center = (288, 512))
 
-flap_sound = pygame.mixer.Sound('sound/sfx_ocean-sounds.wav')
+# flap_sound = pygame.mixer.Sound('sound/sfx_ocean-sounds.wav')
 death_sound = pygame.mixer.Sound('sound/sfx_hit.wav')
 score_sound = pygame.mixer.Sound('sound/sfx_point.wav')
 
