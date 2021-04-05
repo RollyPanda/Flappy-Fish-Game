@@ -52,9 +52,9 @@ def score_display(game_state):
         score_rect = score_surface.get_rect(center = (288, 100))
         screen.blit(score_surface, score_rect)
 
-        fact_surface = game_font.render(f"Fact: {fact_text}", True, (255, 255, 255))
-        fact_rect = fact_surface.get_rect(center = (288, 750))
-        screen.blit(fact_surface, fact_rect)
+#         fact_surface = game_font.render(f"Fact: {fact_text}", True, (255, 255, 255))
+#         fact_rect = fact_surface.get_rect(center = (288, 750))
+#         screen.blit(fact_surface, fact_rect)
 
         high_score_surface = game_font.render(f"High Score: {str(int(high_score))}", True, (255, 255, 255))
         high_score_rect = score_surface.get_rect(center = (288, 850))
