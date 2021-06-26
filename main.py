@@ -52,7 +52,7 @@ def score_display(game_state):
         score_rect = score_surface.get_rect(center = (288, 100))
         screen.blit(score_surface, score_rect)
 
-        fact_surface = game_font.render(f"Fact: {fact_text}", True, (255, 255, 255))
+        fact_surface = game_font_fact.render(f"Fact: {fact_text}", True, (255, 255, 255))
         fact_rect = fact_surface.get_rect(center = (288, 750))
         screen.blit(fact_surface, fact_rect)
 
@@ -68,7 +68,8 @@ def update_score(score, high_score):
 pygame.init()
 screen = pygame.display.set_mode((576, 1024))
 clock = pygame.time.Clock()
-game_font = pygame.font.Font("04B_19.ttf", 10)
+game_font = pygame.font.Font("04B_19.ttf", 40)
+game_font_fact = pygame.font.Font("04B_19.ttf", 15)
 
 # Game Variables
 gravity = 0.25
@@ -76,18 +77,18 @@ bird_movement = 0
 game_active = True
 old_score = 0
 score = 0
-fact_text = random.choice(["Fresh water on earth is only 2.5 percent of the total water when 70 percent of the earth's surface is covered by water."
-                            , "Around 70 percents of industrial waste is dumped to water.", "80 percent of the water pollution is caused due to domestic sewage.", 
-                            "More than 6 billion pounds of garbage, mainly plastic end up in the oceans every year.",
-                            "The contaminated water is the main cause of various diseases such as cholera and typhus.", 
-                            "15 million children under the age of five years die every year from diseases caused by drinking contaminated water.",
-                            "The nuclear crisis created by the tsunami of 2011, unleashed 11 million liters of radioactive water into the Pacific Ocean.", 
+fact_text = random.choice(["Fresh water on earth \n is only 2.5 percent of the total water when \n 70 percent of the earth's surface is covered by water."
+                            , "Around 70 percents of \n industrial waste is dumped to water.", "80 percent of the water pollution is \n caused due to domestic sewage.", 
+                            "More than 6 billion pounds of garbage, mainly plastic \n end up in the oceans every year.",
+                            "The contaminated water is the main cause of various \n diseases such as cholera and typhus.", 
+                            "15 million children under the age of five years \n die every year from diseases caused by drinking \n contaminated water.",
+                            "The nuclear crisis created by the tsunami of 2011, \n unleashed 11 million liters of radioactive \n water into the Pacific Ocean.", 
                             "The same tsunami debris created islands totaling 70 kilometers in length which float in the ocean.", 
-                            " Asia has the highest number of contaminated rivers than any other continent, mainly of bacteria from human waste.",
-                            "Almost two million tons of human waste are exposed daily to water.", "The Ganges river in India is considered the most polluted river in the world and contains dirt, garbage, dead animals and humans.",
-                            "Underground Bangladeshi water is contaminated with arsenic, which is highly toxic, poisonous and carcinogenic.", 
-                            "20 percent of groundwater in China which are used as drinking water contaminated with carcinogens.", 
-                            "In America 40 percent of rivers and 46 percent of the lakes are polluted and unsuitable for swimming, fishing or any other activity."])
+                            " Asia has the highest number of contaminated rivers \nthan any other continent, mainly \nof bacteria from human waste.",
+                            "Almost two million tons of human waste are \nexposed daily to water.", "The Ganges river in \n India is considered the most polluted river in the \nworld and contains dirt, garbage, dead animals and humans.",
+                            "Underground Bangladeshi water is contaminated with arsenic, \n which is highly toxic, poisonous and carcinogenic.", 
+                            "20 percent of groundwater in China which are \n used as drinking water contaminated with carcinogens.", 
+                            "In America 40 percent of rivers and 46 percent \n of the lakes are polluted and unsuitable for swimming, \n fishing or any other activity."])
 high_score = 0
 
 
@@ -142,7 +143,7 @@ while True:
             if event.key in [pygame.K_SPACE, pygame.K_UP] and game_active:
                 bird_movement = 0
                 # bird_movement here original is 12, but the smaller it is, the easier the game is
-                bird_movement -= 7
+                bird_movement -= 5
                 # flap_sound.play()
 
             if event.key in [pygame.K_SPACE, pygame.K_UP] and not game_active:
